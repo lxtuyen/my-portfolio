@@ -1,4 +1,5 @@
 type Skill = {
+  _id?: string;
   category: string;
-  items: string[];
+  skills: string[];
 };

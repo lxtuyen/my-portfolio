@@ -1,0 +1,24 @@
+export const uploadToCloudinary = async (file: File): Promise<string> => {
+  const formData = new FormData();
+  formData.append("file", file);
+  formData.append(
+    "upload_preset",
+    "multiLibrary"
+  );
+  formData.append('upload_name', '');
+
+  const res = await fetch(
+    `https://api.cloudinary.com/v1_1/multi-library/image/upload`,
+    {
+      method: "POST",
+      body: formData,
+    }
+  );
+
+  if (!res.ok) {
+    throw new Error("Upload image failed");
+  }
+
+  const data = await res.json();
+  return data.secure_url as string;
+};

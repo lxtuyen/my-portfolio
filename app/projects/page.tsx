@@ -1,7 +1,7 @@
 "use client";
 import { useState } from 'react';
 import { Search, Filter, Star, Github, ExternalLink, ArrowRight } from 'lucide-react';
-import ProjectCard from '../components/card/ProjectCard';
+import ProjectCard from '../components/card/project-card';
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');

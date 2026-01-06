@@ -5,12 +5,12 @@ type ProjectCategory =
   | "Mobile";
 
 type Project = {
-  id: string;
+  _id?: string;
   title: string;
   category: ProjectCategory;
   description: string;
   longDescription?: string;
-  image?: string;
+  images: string[];
   tech: string[];
   features: string[];
   github?: string;

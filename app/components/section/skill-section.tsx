@@ -19,7 +19,7 @@ export default function SkillSection({
               <div key={i} className="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-cyan-400 transition">
                 <h3 className="text-xl font-bold text-cyan-400 mb-4">{skill.category}</h3>
                 <div className="flex flex-wrap gap-2">
-                  {skill.items.map((item, j) => (
+                  {skill.skills.map((item, j) => (
                     <span key={j} className="bg-gray-700 px-3 py-1 rounded-full text-sm">
                       {item}
                     </span>

@@ -12,7 +12,6 @@ export default function Navigation() {
   const router = useRouter();
 
   const menuItems = ["Giới thiệu", "Kỹ năng", "Dự án", "Liên hệ"];
-console.log(user);
 
   const handleLogout = () => {
     logout();

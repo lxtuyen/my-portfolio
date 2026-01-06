@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { User, FolderGit2, Wrench } from "lucide-react";
-import ProfileForm from "./components/profile-form";
+import ProfileForm from "./components/form/profile-form";
 import ProjectManager from "./components/project-manager";
 import SkillManager from "./components/skill-manager";
 

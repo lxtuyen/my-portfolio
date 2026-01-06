@@ -1,6 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import { useState } from "react";
-import ProjectCard from "../card/ProjectCard";
+import ProjectCard from "../card/project-card";
 
 interface ProjectSectionProps {
   projects: Project[];

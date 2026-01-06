@@ -1,21 +1,21 @@
 "use client";
-import SkillSection from "./components/section/SkillSection";
-import ProjectSection from "./components/section/ProjectSection";
-import ContactSection from "./components/section/ContactSection";
-import HeroSection from "./components/section/HeroSection";
-import Navigation from "./components/Navigation";
+import SkillSection from "./components/section/skill-section";
+import ProjectSection from "./components/section/project-section";
+import ContactSection from "./components/section/contact-section";
+import HeroSection from "./components/section/hero-section";
+import Navigation from "./components/navigation";
 
 export default function Portfolio() {
 
   const projects: Project[] = [
     {
-      id: "p1",
+      _id: "p1",
       title: "E-commerce Website",
       category: "Backend",
       description: "Website bán bánh",
       longDescription:
         "Website bán bánh với đầy đủ chức năng admin, user, order",
-      image: "/images/ecommerce.png",
+      images: [],
       tech: ["Express", "MongoDB", "React"],
       features: [
         "Đăng nhập / đăng ký",
@@ -32,13 +32,13 @@ export default function Portfolio() {
   const skills: Skill[] = [
     {
       category: "Frontend",
-      items: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+      skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
     },
     {
       category: "Backend",
-      items: ["Node.js", "PostgreSQL", "MongoDB", "REST API"],
+      skills: ["Node.js", "PostgreSQL", "MongoDB", "REST API"],
     },
-    { category: "Tools", items: ["Git", "Figma", "Postman"] },
+    { category: "Tools", skills: ["Git", "Figma", "Postman"] },
   ];
 
   return (
