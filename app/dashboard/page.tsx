@@ -13,7 +13,6 @@ export default function DashboardPage() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100 flex">
-      {/* Sidebar */}
       <aside className="w-64 border-r border-gray-700 p-6 space-y-4">
         <h2 className="text-xl font-bold text-blue-400 mb-6">
           User Center
@@ -41,7 +40,6 @@ export default function DashboardPage() {
         />
       </aside>
 
-      {/* Content */}
       <main className="flex-1 p-8">
         {tab === "profile" && <ProfileForm />}
         {tab === "projects" && <ProjectManager />}

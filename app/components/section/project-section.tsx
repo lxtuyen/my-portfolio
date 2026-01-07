@@ -1,5 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 import ProjectCard from "../card/project-card";
 
 interface ProjectSectionProps {
@@ -19,7 +20,21 @@ export default function ProjectSection({ projects }: ProjectSectionProps) {
           key={i}
           className="bg-gray-900 rounded-lg overflow-hidden border border-gray-700 hover:border-blue-400 transition group"
         >
-          <div className="h-48 bg-linear-to-br from-blue-600/20 to-cyan-600/20"></div>
+          <div className="relative h-48 overflow-hidden bg-gray-800">
+            {project.images?.length > 0 ? (
+              <Image
+                src={project.images[0]}
+                alt={project.title}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center text-gray-500 text-sm">
+                No image
+              </div>
+            )}
+          </div>
+
           <div className="p-6">
             <h3 className="text-xl font-bold mb-2 group-hover:text-blue-400 transition">
               {project.title}

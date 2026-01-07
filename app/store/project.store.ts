@@ -22,7 +22,6 @@ export const useProjectStore = create<ProjectState>((set) => ({
   loading: false,
   error: null,
 
-  /* ================= FETCH LIST ================= */
   fetchProjects: async () => {
     set({ loading: true, error: null });
     try {
@@ -36,7 +35,6 @@ export const useProjectStore = create<ProjectState>((set) => ({
     }
   },
 
-  /* ================= FETCH DETAIL ================= */
   fetchProjectById: async (id) => {
     set({ loading: true, error: null });
     try {
@@ -50,7 +48,6 @@ export const useProjectStore = create<ProjectState>((set) => ({
     }
   },
 
-  /* ================= CREATE ================= */
   addProject: async (data) => {
     set({ loading: true, error: null });
     try {
@@ -67,7 +64,6 @@ export const useProjectStore = create<ProjectState>((set) => ({
     }
   },
 
-  /* ================= UPDATE ================= */
   updateProject: async (id, data) => {
     set({ loading: true, error: null });
     try {
@@ -86,8 +82,7 @@ export const useProjectStore = create<ProjectState>((set) => ({
       });
     }
   },
-
-  /* ================= DELETE ================= */
+  
   deleteProject: async (id) => {
     set({ loading: true, error: null });
     try {

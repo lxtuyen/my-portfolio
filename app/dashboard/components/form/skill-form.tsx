@@ -16,7 +16,6 @@ export default function SkillForm({ editingSkill, onCancel }: SkillFormProps) {
   const [skills, setSkills] = useState<string[]>(editingSkill?.skills || []);
   const [input, setInput] = useState("");
 
-  /* ================= ADD TAG ================= */
   const handleAddSkill = () => {
     if (!input.trim()) return;
     if (skills.includes(input.trim())) return;

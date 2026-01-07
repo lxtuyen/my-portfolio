@@ -21,7 +21,7 @@ export default function SignupPage() {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+   /* e.preventDefault();
     if (form.password !== form.confirmPassword) {
       setError("Mật khẩu không khớp");
       return;
@@ -38,7 +38,7 @@ export default function SignupPage() {
       setError(err instanceof Error ? err.message : "Đăng nhập thất bại");
     } finally {
       setLoading(false);
-    }
+    }*/
   };
 
   return (

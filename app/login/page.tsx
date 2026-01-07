@@ -87,12 +87,12 @@ export default function LoginPage() {
           </button>
         </form>
 
-        <p className="text-center text-gray-400 mt-6">
+        {/*<p className="text-center text-gray-400 mt-6">
           Chưa có tài khoản?{" "}
           <Link href="/signup" className="text-blue-400 hover:underline">
             Đăng ký
           </Link>
-        </p>
+        </p>*/}
       </div>
     </div>
   );

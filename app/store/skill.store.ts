@@ -17,7 +17,6 @@ export const useSkillStore = create<SkillState>((set) => ({
   loading: false,
   error: null,
 
-  /* ================= FETCH ================= */
   fetchSkills: async () => {
     set({ loading: true, error: null });
     try {
@@ -31,7 +30,6 @@ export const useSkillStore = create<SkillState>((set) => ({
     }
   },
 
-  /* ================= CREATE ================= */
   addSkill: async (data) => {
     set({ loading: true, error: null });
     try {
@@ -48,7 +46,6 @@ export const useSkillStore = create<SkillState>((set) => ({
     }
   },
 
-  /* ================= UPDATE ================= */
   updateSkill: async (id, data) => {
     set({ loading: true, error: null });
     try {
@@ -67,7 +64,6 @@ export const useSkillStore = create<SkillState>((set) => ({
     }
   },
 
-  /* ================= DELETE ================= */
   deleteSkill: async (id) => {
     set({ loading: true, error: null });
     try {

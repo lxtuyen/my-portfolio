@@ -1,6 +1,12 @@
+import { Profile } from "@/app/types/profile";
 import { Github, Linkedin, Mail } from "lucide-react";
 
-export default function ContactSection() {
+interface Props {
+  profile: Profile | null;
+}
+
+
+export default function ContactSection({ profile }: Props) {
     return (
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6">Hãy liên hệ với tôi</h2>
@@ -10,14 +16,14 @@ export default function ContactSection() {
           </p>
           <div className="flex justify-center gap-6 mb-12">
             <a
-              href="mailto:tuyenlx.22itb@vku.udn.vn"
+              href={`mailto:${profile?.email || "tuyenlx.22itb@vku.udn.vn"}`}
               aria-label="Send email"
               className="bg-gray-800 hover:bg-gray-700 p-4 rounded-lg transition"
             >
               <Mail size={24} />
             </a>
             <a
-              href="https://github.com/lxtuyen"
+              href={profile?.github || "#"}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub profile"
@@ -27,7 +33,7 @@ export default function ContactSection() {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/xu%C3%A2n-tuy%E1%BB%83n-0980b8287/"
+              href={profile?.linkedin || "https://www.linkedin.com/in/xu%C3%A2n-tuy%E1%BB%83n-0980b8287/"}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn profile"
@@ -37,7 +43,7 @@ export default function ContactSection() {
             </a>
           </div>
           <a
-            href="mailto:tuyenlx.22itb@vku.udn.vn"
+            href={`mailto:${profile?.email || "tuyenlx.22itb@vku.udn.vn"}`}
             className="inline-block bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-semibold transition"
           >
             Gửi email

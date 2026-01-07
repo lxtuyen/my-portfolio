@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Plus } from "lucide-react";
-import ProjectForm, { ProjectFormData } from "./form/project-form";
+import ProjectForm from "./form/project-form";
 import { useProjectStore } from "@/app/store/project.store";
 
 export default function ProjectManager() {
@@ -18,13 +18,11 @@ export default function ProjectManager() {
   const [showForm, setShowForm] = useState(false);
   const [editingProject, setEditingProject] = useState<Project | null>(null);
 
-  /* ================= LOAD PROJECTS ================= */
   useEffect(() => {
     fetchProjects();
   }, [fetchProjects]);
 
-  /* ================= SUBMIT ================= */
-  const handleSubmit = async (data: ProjectFormData) => {
+  const handleSubmit = async (data: Project) => {
     if (editingProject?._id) {
       await updateProject(editingProject._id, data);
     } else {
@@ -35,13 +33,11 @@ export default function ProjectManager() {
     setEditingProject(null);
   };
 
-  /* ================= EDIT ================= */
   const handleEdit = (project: Project) => {
     setEditingProject(project);
     setShowForm(true);
   };
 
-  /* ================= DELETE ================= */
   const handleDelete = async (id: string) => {
     if (!confirm("Xóa dự án này?")) return;
     await deleteProject(id);
@@ -49,7 +45,6 @@ export default function ProjectManager() {
 
   return (
     <div>
-      {/* HEADER */}
       {!showForm && (
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold">Dự án</h1>
@@ -63,7 +58,6 @@ export default function ProjectManager() {
         </div>
       )}
 
-      {/* LIST */}
       {!showForm && (
         <div className="space-y-4">
           {projects.map((project) => (
@@ -113,7 +107,6 @@ export default function ProjectManager() {
         </div>
       )}
 
-      {/* FORM */}
       {showForm && (
         <ProjectForm
           key={editingProject?._id ?? "new"}
